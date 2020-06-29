@@ -198,3 +198,18 @@ function displayResult() {
     
 
 };
+
+
+//reset button after they complete the game
+$(document).on("click","#reset", function(){
+    secondsLeft = 23;
+    currentQuestion = 0;
+    score = 0;
+    lost = 0;
+    timer = null;
+    loadQuestion()
+    console.log("quiz has ended");
+    
+
+
+});
