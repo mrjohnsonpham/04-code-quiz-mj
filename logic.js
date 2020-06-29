@@ -40,3 +40,14 @@ var quizQuestions = [
 
     
 ];
+
+//List of values
+var secondsLeft = 23;                
+// keeping track of the amount of question 
+var currentQuestion = 0;       
+ // currentQuestion will start at the index of 0. 
+var score = 0;                 
+ // score will be tracked at 0
+var lost = 0;        
+// amount of questions answered incorrectly           
+var timer;                   
