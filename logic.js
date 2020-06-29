@@ -213,3 +213,27 @@ $(document).on("click","#reset", function(){
 
 
 });
+
+// submit for highscore 
+$(document).on("click","#submit", function(){
+    if (initials !== "") {
+        var initials = document.getElementById("initials").value.trim();   
+        console.log(initials);
+        var scores = JSON.parse(window.localStorage.getItem("scores")) || [];
+        //user input storage format 
+        var newScore = {
+            score: score,
+            initials: initials
+        };
+
+        //appending new scores to array of high scores
+        scores.push(newScore);
+        //add high scores to local storage
+        window.localStorage.setItem("scores", JSON.stringify(scores));
+        //change url to scores page
+        // window.location.href = "scores.html";
+        // // not working
+
+    }
+});
+    
