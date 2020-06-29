@@ -51,3 +51,125 @@ var score = 0;
 var lost = 0;        
 // amount of questions answered incorrectly           
 var timer;                   
+
+
+function countDown() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        $("#time").html("Timer: " + secondsLeft); 
+        // score.textContent= "";
+        if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+            alert("Time's up!");
+            displayResult();
+            lostGame();
+        }
+    }, 1000);
+
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+// Event listeners 
+//On start click removes the start Id from body and runs the countDown() to decrement time. also loads next question
+$("#start").click(function() {
+    $("#start").remove();
+    // $("#start").html(secondsLeft--);
+    countDown();
+    loadQuestion();
+
+});;
+
+
+
+
+//Display the questions, choices and creating a function to pick the current question and load
+
+//goes to ID of game and inside the html will create an h4 that populates the question and below it will populate the choices and also populate the remaining questions in fraction form.
+
+function loadQuestion() {
+    console.log("is thing loading the question")
+    // timer = setInterval(countDown(), 1000);
+    // the variable time will be assigned a setInterval(countdown, 1000)
+
+    const question = quizQuestions[currentQuestion].questions;
+    // const question will be assigned the variable array we have made our questions with and have the current index of 0 and display the questions.
+    const choices =  quizQuestions[currentQuestion].choices;
+        // const question will be assigned the variable array we have made our questions with and have the current index of 0 and display the choices.
+
+    // $("#time").html("Time Remaining: " + secondsLeft);
+   // created a class from the html h2 id="time" and added the counter 
+    //Displaying the question and function that has the choices
+    $("#game").html(`
+        
+        <h4>${question}</h4> 
+        ${loadChoices(choices)}
+        ${loadRemainingQuestion()}
+        
+    
+    `);
+    
+}    
+
+
+//
+function loadChoices(choices) {
+    var result = " ";
+
+    // created a loop that will go over the choices till theres no more
+    for (var i = 0; i < choices.length; i++) {
+    //setting a data answer with every value of choices and also displaying them 
+        result += `<p class="choice" data-answer="${choices[i]}">${choices[i]}</p>`;
+    }
+    return result;
+
+}
+
+// this was added after all the questions and choices were able to seen
+// allowing the user to click and choose their answer
+$(document).on("click", ".choice",function() {
+    // clearInterval(timer);
+    var selectedAnswer = $(this).attr("data-answer");
+    var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
+    if (correctAnswer===selectedAnswer){
+        score++;
+        nextQuestion();
+        console.log("wins");
+    }
+    else{
+        lost++;
+        secondsLeft -=5;
+
+        // not working
+        nextQuestion();
+        console.log("loss");
+    }
+    
+});;
+
+
+
+function loadRemainingQuestion() {
+    var remainingQuestion = quizQuestions.length - ( currentQuestion + 1);
+    var totalQuestion = quizQuestions.length;
+
+    return `Remaining Question: ${remainingQuestion}/${totalQuestion}`;
+}
+
+//function that checks if the questions array = questions.length. so if 6 = 6 game is over if not go to next question.
+function nextQuestion(){
+    var isQuestionOver= (quizQuestions.length - 1) === currentQuestion;
+    if (isQuestionOver){
+        console.log("game is over");
+        displayResult();
+        stopTimer();
+    }   
+    
+    else{
+        currentQuestion++;
+        loadQuestion();
+    }
+    
+}
