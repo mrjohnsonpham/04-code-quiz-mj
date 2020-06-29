@@ -33,8 +33,8 @@ var quizQuestions = [
     {
     
         questions:      "Jordan is one of the greatest athletes of all time. What is Jordan's estimated net worth",
-        choices:        ["$900m", "$1.3bn", "$1.7bn", "2.1bn"],
-        correctAnswer:  "2.1bn"
+        choices:        ["$900m", "$1.3bn", "$1.7bn", "$2.1bn"],
+        correctAnswer:  "$2.1bn"
 
     }
 
@@ -173,3 +173,28 @@ function nextQuestion(){
     }
     
 }
+
+function displayResult() {
+
+    var endScreenEl = document.getElementById("end-screen");
+    endScreenEl.removeAttribute("class");
+    var finalScoreEl = document.getElementById("final-score");
+    finalScoreEl.textContent = score;
+
+    //if you want to make a div hide
+   // endScreenEl.setAttribute("class", "hide");
+
+    console.log("inside displayresults ", score);
+    window.localStorage.setItem("highscore", score);
+    // console.log(JSON.parse(localStorage.getItem("score")));
+    //get score value from localestorage 
+    // window.localStorage.getItem("score");   // was hidden
+    var result = `
+    <p>You got ${score} questions(s) right </p.>
+    <p>You got ${lost} questions(s) wrong </p.>
+    <button class="btn btn-primary" id="reset">Reset Game </button>
+    `;
+    $("#game").html(result);
+    
+
+};
