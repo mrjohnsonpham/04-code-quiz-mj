@@ -152,8 +152,6 @@ $(document).on("click", ".choice",function() {
     else{
         lost++;
         secondsLeft -=5;
-
-        // not working
         nextQuestion();
         console.log("loss");
     }
@@ -243,16 +241,10 @@ $(document).on("click","#submit", function(){
         scores.push(newScore);
         //add high scores to local storage
         window.localStorage.setItem("scores", JSON.stringify(scores));
-        //change url to scores page
-        // window.location.href = "scores.html";
-        // // not working
+
 
     }
 });
     
     
     
-
-
-
-// function endgame() 
