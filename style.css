@@ -1,0 +1,73 @@
+
+
+
+
+body{
+    width:100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #000000, #CE1141, #ffff);
+    color: #fff;
+    font-family: raleway;
+  }
+  
+  h1{
+    text-align: center;
+    font-family: raleway;
+    font-size: 50px;
+  }
+  
+  
+  p{
+    text-align:center;
+    font-family: raleway;
+    font-size: 25px;
+    
+  }
+  
+  #time{
+    text-align:center;
+    font-family: raleway;
+    font-size: 25px;
+  }
+  
+  #game{
+    text-align:center;
+    font-family: raleway;
+    font-size: 25px;
+  }
+  
+  #end-screen{
+    margin-top: 500px;
+    margin: 0 auto
+  }
+  
+  
+  
+  .hide{
+    display: none;
+  }
+  
+  .scores{
+    text-align:center;
+  }
+  
+  /* buttons */
+  
+  .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto
+  }
+  
+  .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto
+  }
