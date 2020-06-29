@@ -53,12 +53,15 @@ var lost = 0;
 var timer;                   
 
 
+// }
+
+
 function countDown() {
     var timerInterval = setInterval(function() {
         secondsLeft--;
         $("#time").html("Timer: " + secondsLeft); 
         // score.textContent= "";
-        if(secondsLeft === 0) {
+        if(secondsLeft <= 0) {
             clearInterval(timerInterval);
             alert("Time's up!");
             displayResult();
@@ -71,6 +74,14 @@ function countDown() {
 function stopTimer() {
     clearInterval(timerInterval);
 }
+
+//will increment lost value by one.
+function lostGame() {
+    lost++;
+    // nextQuestion();
+}
+
+
 
 // Event listeners 
 //On start click removes the start Id from body and runs the countDown() to decrement time. also loads next question
@@ -214,6 +225,8 @@ $(document).on("click","#reset", function(){
 
 });
 
+
+
 // submit for highscore 
 $(document).on("click","#submit", function(){
     if (initials !== "") {
@@ -237,3 +250,9 @@ $(document).on("click","#submit", function(){
     }
 });
     
+    
+    
+
+
+
+// function endgame() 
