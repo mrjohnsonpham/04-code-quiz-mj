@@ -53,7 +53,7 @@ var lost = 0;
 var timer;                   
 
 
-// }
+
 
 
 function countDown() {
