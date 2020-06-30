@@ -5,7 +5,7 @@ What you are viewing is a Michael Jordan Themed Multiple Choice Trivia Quiz whic
 
 What your landing page is offering: 
 -- You are introduced by an animated css of the text title of the game and basketball cursor.
--- You are also giving the option to play Michael Jordan's Theme song as you place. 
+-- You are also given the option to play Michael Jordan's Theme song as you play. 
 
 When you click start game:
 
