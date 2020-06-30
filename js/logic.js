@@ -26,13 +26,13 @@ var quizQuestions = [
     },
 
     {
-        questions:      "How many Olympic Gold Medals did Jordan win in his career",
+        questions:      "How many Olympic Gold Medals did Jordan win in his career?",
         choices:        ["0", "1", "2", "3"],
         correctAnswer:  "2"
     },
     {
     
-        questions:      "Jordan is one of the greatest athletes of all time. What is Jordan's estimated net worth",
+        questions:      "Jordan is one of the greatest athletes of all time. What is Jordan's estimated net worth?",
         choices:        ["$900m", "$1.3bn", "$1.7bn", "$2.1bn"],
         correctAnswer:  "$2.1bn"
 
@@ -201,7 +201,7 @@ function displayResult() {
     var result = `
     <p>You got ${score} questions(s) right </p.>
     <p>You got ${lost} questions(s) wrong </p.>
-    <button class="btn btn-primary" id="reset">Reset Game </button>
+ <button class="btn btn-primary" id="reset">Reset Game </button>
     `;
     $("#game").html(result);
     
