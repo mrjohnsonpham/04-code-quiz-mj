@@ -20,3 +20,7 @@ When you click start game:
 -- Be mindful that the timer is set to 23 seconds, if you run out of time. The quiz will end and alert the user "times up!".
 
 -- As you reach towards the end of the game, you will be presented with your results of total answered correctly, total answered incorrectly, a final display of your final score and lastly the option to enter in your name for the scoreboard which will be stored in localStorage which can be obtained using JSON.stringify, JSON.parse, and getItem from localStorage.
+
+## Deployed Links
+1. https://github.com/mrjohnsonpham/04-code-quiz-mj
+2. https://mrjohnsonpham.github.io/04-code-quiz-mj/
